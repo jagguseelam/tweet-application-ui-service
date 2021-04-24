@@ -1,0 +1,13 @@
+.tweet-container .tweet-card {
+    padding: 2% 5% 2% 5%;
+    display: flex;
+    font-family: "Helevetica", arial, sans-serif;
+    font-size: 16px;
+    border: solid 0.5px;
+    border-radius: 1.5rem;
+    margin: 2% 0% 2% 0%;
+}
+
+.tweet-container .tweet-card .content {
+    margin: 1% 0% 0% 0%;
+}
