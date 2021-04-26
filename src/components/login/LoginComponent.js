@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import InputField from '../inputField/InputField';
 import InputError from '../errors/InputError';
 import * as TweetUtil from '../../util/TweetUtil';
@@ -11,15 +11,22 @@ class LoginComponent extends Component {
     super(props);
     this.state = {
       isEmailValid: false,
+      email: '',
+      password: '',
       errors: {
         emailError: '',
         passwordError: ''
-      }
+      },
     };
   }
 
   onClickLoginHandler = () => {
-    console.log('I pressed Login Button');
+    const { email, password } = this.state;
+    this.props.loggedInDetails({ email, password });
+  }
+
+  onClickGoBackHandler = () => {
+    this.props.goBackHandler();
   }
 
   onChangeEmailHandler = (e) => {
@@ -28,7 +35,8 @@ class LoginComponent extends Component {
         isEmailValid: true, errors: {
           ...this.state.errors,
           emailError: ''
-        }
+        },
+        email: e.target.value
       });
     } else {
       this.setState({
@@ -46,7 +54,8 @@ class LoginComponent extends Component {
         isPasswordValid: true, errors: {
           ...this.state.errors,
           passwordError: ''
-        }
+        },
+        password: e.target.value
       });
     } else {
       this.setState({
@@ -72,10 +81,17 @@ class LoginComponent extends Component {
           {![''].includes(emailError) && <InputError errorMessage={emailError} />}
           {![''].includes(passwordError) && <InputError errorMessage={passwordError} />}
         </div>
-        <button className="primary-button" onClick={this.onClickLoginHandler}>{'Login'}</button>
+        <div className='button-container'>
+          <button className="primary-button" onClick={this.onClickLoginHandler}>{'Login'}</button>
+          <button className="primary-button" onClick={this.onClickGoBackHandler}>{'Go Back'}</button>
+        </div>
       </div>
     );
   }
 }
+
+LoginComponent.propTypes = {
+  loggedInDetails: PropTypes.func,
+};
 
 export default LoginComponent;

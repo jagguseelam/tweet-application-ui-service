@@ -1,8 +1,8 @@
 import './Message.css';
 
-const Message = () => {
+const Message = (props) => {
     return (
-        <div className="message">This message is less than 140 characters!</div>
+        <div className="message">{props.message}</div>
     );
 }
 

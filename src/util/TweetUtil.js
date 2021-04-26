@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const ValidateEmail = (email) => {
     const pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (email.match(pattern)) {
@@ -16,4 +18,9 @@ export const ValidatePassword = (password) => {
     else {
         return false;
     }
+}
+
+export const formatDate = (time) => {
+    var dateAndTime = moment(time).format(`YYYY-MM-DD HH:mm:ss.SSS`);
+    return moment(dateAndTime, 'YYYY-MM-DD HH:mm:ss.SSS').fromNow()
 }

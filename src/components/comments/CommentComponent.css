@@ -1,0 +1,11 @@
+.comment {
+    font-size: 14px;
+    font-family: monospace;
+    padding: 1% 1% 1% 1%;
+}
+
+.comment .comment-body {
+    border: 0.1rem solid;
+    border-radius: 1rem;
+    padding: 1% 2% 2% 3%;
+}

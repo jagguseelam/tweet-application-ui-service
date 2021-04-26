@@ -9,7 +9,7 @@ class RegisterContainer extends Component {
 
     render() {
         return (
-            <RegisterComponent />
+            <RegisterComponent registrationDetails={this.props.registrationDetails} goBackHandler={this.props.goBackHandler} />
         );
     }
 }

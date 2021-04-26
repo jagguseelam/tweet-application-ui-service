@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import LoginComponent from '../../components/login/LoginComponent';
 
 class LoginContainer extends Component {
@@ -8,10 +9,19 @@ class LoginContainer extends Component {
     }
 
     render() {
+        const { loggedInDetails} = this.props;
         return (
-            <LoginComponent />
+            <LoginComponent loggedInDetails={loggedInDetails} goBackHandler={this.props.goBackHandler} />
         );
     }
+}
+
+LoginContainer.propTypes = {
+    loggedInDetails: PropTypes.func,
+};
+
+LoginContainer.defaultValues = {
+
 }
 
 export default LoginContainer;

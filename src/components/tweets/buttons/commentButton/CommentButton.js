@@ -1,8 +1,11 @@
 import '../TweetButton.css';
+import React from 'react';
 
-const CommentButton = () => {
+const CommentButton = (props) => {
     return (
-        <i className="far fa-comment" />
+        <span>
+           {props.count}<i className="far fa-comment" onClick={() => props.onClickCommentButton()} />
+        </span>
     );
 }
 

@@ -24,15 +24,21 @@
     margin: 4%;
 }
 
-.login-container .primary-button {
-    padding: 2% 6% 2% 6%;
-    border: solid 1px;
-    border-radius: 2rem;
-    font-size: 17px;
-    font-family: sans-serif;
+.login-container .button-container {
+    display: flex;
+    align-self: normal;
+    justify-content: center;
 }
 
-.login-container .primary-button:active, .login-container .primary-button:focus:active, .login-container .primary-button:focus {
+.login-container .button-container .primary-button {
+    padding: 2% 4% 2% 4%;
+    border: solid;
+    border-radius: 2rem;
+    font-family: sans-serif;
+    margin: 1%;
+}
+
+.login-container .button-container .primary-button:active, .defalut-body-container .button-container .primary-button:focus:active, .defalut-body-container .button-container .primary-button:focus {
     background-image: none;
     outline: 0;
     box-shadow: none;

@@ -2,11 +2,11 @@
 
 import './NameWithUserName.css';
 
-const NameWithUserName = () => {
+const NameWithUserName = (props) => {
     return (
         <span className="name-with-handle">
-            <span className="name">Your Name</span>
-            <span className="handle">@yourhandle</span>
+            <span className="name">{props.name}</span>
+            <span className="handle">{'@' + props.postedBy}</span>
         </span>
     );
 }

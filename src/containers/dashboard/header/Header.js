@@ -6,6 +6,14 @@ import './Header.css';
 class Header extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            selectedOption: "View My Tweets"
+        }
+    }
+
+    onClickMenuOptionHandler = (option) => {
+        this.setState({ selectedOption: option });
+        this.props.selectedOption(option);
     }
 
     render() {
@@ -14,8 +22,8 @@ class Header extends Component {
             <div className='header-container'>
                 <Title title={'Tweet'} logo={'public'} />
                 <div className='menu-options'>
-                    {options.map(e => {
-                        return <span>{e}</span>
+                    {options.map(option => {
+                        return <span key={'user-menu' + option} onClick={() => this.onClickMenuOptionHandler(option)}>{option}</span>
                     })}
                 </div>
             </div>

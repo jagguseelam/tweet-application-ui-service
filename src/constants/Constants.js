@@ -1,2 +1,2 @@
-export const DASHBOARD_OPTIONS = ['Register', 'Login'];
-export const LOGIN_OPTIONS = ['View My Tweets', 'View Tweets', 'Post Tweet', 'Change Password', 'Logout'];
+export const DASHBOARD_OPTIONS = ['Register', 'Login', 'Forgot Password'];
+export const LOGIN_OPTIONS = ['View My Tweets', 'View Tweets', 'Notifications', 'Logout'];

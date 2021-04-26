@@ -1,9 +1,9 @@
 import '../TweetButton.css';
 
-const LikeButton = () => {
+const LikeButton = (props) => {
     return (
-        <i className="fa fa-heart like-button" />
-    );
+        <span>{props.count}<i className="fa fa-heart like-button" onClick={() => props.onClickLikeButton()} /></span>
+    )
 }
 
 export default LikeButton;

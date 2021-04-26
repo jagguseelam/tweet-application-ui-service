@@ -2,9 +2,9 @@
 
 import './Time.css';
 
-const Time = () => {
+const Time = (props) => {
     return (
-        <span className="time">3h ago</span>
+        <span className="time">{props.dateAndTime}</span>
     );
 }
 
