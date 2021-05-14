@@ -1,0 +1,18 @@
+.post-tweet-container {
+    border: solid 0.1rem;
+    border-radius: 0.5rem;
+    display: flex;
+}
+
+.post-tweet-container .post-tweet-text-area {
+    padding: 3% 1% 3% 1%;
+    flex: 1;
+}
+
+.post-tweet-container .post-tweet-button {
+    padding: 2% 4% 2% 4%;
+    background: none;
+    border: none;
+    box-shadow: none;
+    align-self: center;
+}

@@ -1,0 +1,6 @@
+.header-container .menu-options {
+    display: flex;
+    margin: 2% 5% 2% 5%;
+    justify-content: space-evenly;
+    font-size: 18px;
+}
