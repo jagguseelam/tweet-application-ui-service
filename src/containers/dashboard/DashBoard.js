@@ -35,7 +35,7 @@ class DashBoard extends Component {
     }
 
     onSelectMenuOption = async (option) => {
-        const { loginId } = this.state.loggedInUserDetails;
+        const { email } = this.state.loggedInUserDetails;
         switch (option) {
 
             case 'Logout': {
@@ -51,7 +51,7 @@ class DashBoard extends Component {
                 break;
 
             case 'View My Tweets': {
-                TweetApi.getUserTweetsInformation(loginId).then((res) => {
+                TweetApi.getUserTweetsInformation(email).then((res) => {
                     this.setState({ tweetsInformation: res.data, selectedOption: option });
                 });
             }

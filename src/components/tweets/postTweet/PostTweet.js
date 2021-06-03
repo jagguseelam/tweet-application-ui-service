@@ -13,14 +13,15 @@ class PostTweet extends Component {
     }
 
     onClickPostTweetHandler = () => {
-        const { loginId, firstName, lastName } = this.props.userDetails;
+        const { loginId, firstName, lastName, email } = this.props.userDetails;
         const { description } = this.state;
         let name = firstName + " " + lastName;
         let body = {
             loginId: loginId,
             postedBy: loginId,
             description: description,
-            name: name 
+            name: name,
+            email: email
         }
 
         TweetApi.postTweet(body).then((res) => {

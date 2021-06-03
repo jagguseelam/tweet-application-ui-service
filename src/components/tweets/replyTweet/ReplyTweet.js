@@ -13,11 +13,12 @@ class ReplyTweet extends Component {
     }
 
     onClickReplyTweetHandler = () => {
-        const { loginId } = this.props.userDetails;
+        const { loginId, email } = this.props.userDetails;
         const { description } = this.state;
         let body = {
             description: description,
             postedBy: loginId,
+            email: email,
             tweetId: this.props.tweetId
         }
         TweetApi.replyToTweet(body).then((res) => {

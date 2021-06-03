@@ -56,7 +56,7 @@ class TweetComponent extends Component {
 
     render() {
         const { tweetInfo } = this.props;
-        const { description = '', name = "No Name", postedBy = '', postedTime = '', _id = '', comments, likes = [] } = tweetInfo;
+        const { description = '', name = "No Name", postedBy = '', postedTime = '', id = '', comments, likes = [] } = tweetInfo;
         const { isCommentSelected } = this.state;
 
         return (
@@ -68,9 +68,9 @@ class TweetComponent extends Component {
                         <Message message={description} />
                         <div className="button">
                             <CommentButton count={this.getNumberOfCommentsAndLikes('comments')} onClickCommentButton={this.onClickCommentForTweetHandler} />
-                            <LikeButton count={this.getNumberOfCommentsAndLikes('likes')} onClickLikeButton={() => this.onClickLikeForTweetHandler(_id)} />
+                            <LikeButton count={this.getNumberOfCommentsAndLikes('likes')} onClickLikeButton={() => this.onClickLikeForTweetHandler(id)} />
                         </div>
-                        <ReplyTweet reloadParent={this.props.reloadParent} tweetId={_id} />
+                        <ReplyTweet reloadParent={this.props.reloadParent} tweetId={id} />
                         <CommentsContainer comments={comments} />
                     </div>
                 </div>
